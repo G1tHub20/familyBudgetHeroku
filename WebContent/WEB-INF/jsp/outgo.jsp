@@ -24,7 +24,7 @@
 <p><%= loginUser.getUserName() %>さんログイン中</p>
 <h1>支出の入力</h1>
 <form action="/familyBudget/Main" method="post">
-金額：<input type="text" name="inputOutgo" required><br>
+金額：￥<input type="text" name="inputOutgo" required><br>
 カテゴリ：
 <select name="category">
 	<option value="食料品">食料品</option>
@@ -36,11 +36,19 @@
 日付：
 <select name="date" >
 
+<% c.set(year, month, day); %>
+<% String today = ((c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH))+ "-" + c.get(Calendar.DATE))); %>
+<% System.out.println("today= " + today); %>
+
 <% for(int i = 0; i < 10; i++) { %>
 <%     c.set(year, month, day+i-5); %>
 <%     date[i] = (c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH))+ "-" + c.get(Calendar.DATE)); %>
 
-<option value="<%= date[i] %>"><%= date[i] %></option>
+<option
+<% if(date[i].equals(today)) { %>
+<%=		"selected" %>
+<% } %>
+value="<%= date[i] %>"><%= date[i] %></option>
 <% } %>
 </select><br>
 <a href="/familyBudget/Main">戻る</a>

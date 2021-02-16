@@ -26,7 +26,7 @@
 <h1>収入の入力</h1>
 
 <form action="/familyBudget/Main" method="post">
-金額：<input type="text" name="inputIncome" required><br>
+金額：￥<input type="text" name="inputIncome" required><br>
 カテゴリ：
 <select name="category">
 	<option value="給与">給与</option>
@@ -42,14 +42,14 @@
 <% System.out.println("today= " + today); %>
 
 <% for(int i = 0; i < 10; i++) { %>
-<%     String selected = ""; %>
 <%     c.set(year, month, day+i-5); %>
 <%     date[i] = (c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH))+ "-" + c.get(Calendar.DATE)); %>
 
-<% if(date[i] == today) { %>
-<% 		selected = "selected"; %>
+<option
+<% if(date[i].equals(today)) { %>
+<%=		"selected" %>
 <% } %>
-<option <%= selected %> value="<%= date[i] %>"><%= date[i] %></option>
+value="<%= date[i] %>"><%= date[i] %></option>
 <% } %>
 </select><br>
 <a href="/familyBudget/Main">戻る</a>
