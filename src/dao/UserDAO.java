@@ -23,7 +23,6 @@ public class UserDAO {
 			System.out.println("▼▼----------------------------------------------------------------");
 			System.out.println("DB接続成功(findUser)"); //★
 
-//			String sql = "SELECT * FROM USER WHERE USER_NAME = \"?\" AND PASS = \"?\"";
 			String sql = "SELECT * FROM USER WHERE USER_NAME = \"" + user.getUserName() + "\" AND PASS = \"" + user.getPass() + "\"";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -44,7 +43,11 @@ public class UserDAO {
 				String registeredUserName = rs.getString("USER_NAME");
 
 				System.out.println("loginUserインスタンスを生成");
+				System.out.println(id + registeredUserName + registeredPass);
 				loginUser = new User(id, registeredUserName, registeredPass);
+			} else {
+				System.out.println("rs.next()=false");
+				loginUser = null;
 			}
 
 		} catch (SQLException e) {
@@ -85,7 +88,7 @@ public class UserDAO {
 			System.out.println("DB接続しっぱい"); //★
 			return false;
 		}
-
+		System.out.println("DBにユーザー情報を追加");
 		System.out.println("▲▲----------------------------------------------------------------");
 		return true;
 

@@ -32,13 +32,13 @@ public class Register extends HttpServlet {
 		UserDAO dao = new UserDAO();
 		User loginUser = dao.findUser(user);
 
-		String errorMsg = null;
-
 		// 登録情報がなければ
 		if (loginUser == null) {
+			System.out.println("入力情報でアカウントを新規登録");
 			RegisterLogic registerLogic = new RegisterLogic();
 			registerLogic.execute(user);
 			request.setAttribute("loginUser", loginUser);
+			request.setAttribute("errorMsg", "アカウントを新規登録しました");
 		} else {
 			System.out.println("別のユーザー名を使用してください");
 			request.setAttribute("errorMsg", "使用できません。別のユーザー名を入力してください");
