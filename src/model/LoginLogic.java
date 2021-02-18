@@ -10,12 +10,11 @@ public class LoginLogic {
 		User loginUser = dao.findUser(user);
 		User loginUser2 = new User();
 
-		System.out.println("id=" + loginUser.getId() + "\r\nuserName=" + loginUser.getUserName() + "\r\nuserPAss=" + loginUser.getPass()); //★
-
 		// ★
-		if (loginUser.getId() != 0) {
+		if (loginUser != null && loginUser.getId() != 0) {
 			System.out.println("ログイン成功");
 
+			System.out.println("id=" + loginUser.getId() + "\r\nuserName=" + loginUser.getUserName() + "\r\nuserPAss=" + loginUser.getPass()); //★
 			// 登録済みユーザーならついでに資産総額も取得
 			BudgetDAO dao2 = new BudgetDAO();
 			int sumMoney = dao2.calcSumMoney(loginUser);

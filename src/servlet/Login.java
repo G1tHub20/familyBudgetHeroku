@@ -29,6 +29,7 @@ public class Login extends HttpServlet {
 		User loginUser = loginLogic.execute(user);
 
 		if (loginUser.getId() != 0) {
+			System.out.println("DBにユーザー情報が存在→ログイン成功");
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", loginUser);
 
@@ -39,6 +40,7 @@ public class Login extends HttpServlet {
 			dispatcher.forward(request, response);
 
 		} else {
+			System.out.println("DBにユーザー情報が存在しない→ログイン失敗");
 			System.out.println("ログイン失敗画面へフォワード");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginFailure.jsp");
 			dispatcher.forward(request, response);
