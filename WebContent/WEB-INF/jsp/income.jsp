@@ -25,7 +25,7 @@
 <p><%= loginUser.getUserName() %>さんログイン中</p>
 <h1>収入の入力</h1>
 
-<form action="/familyBudget/Main" method="post">
+<form action="/Main" method="post">
 金額：￥<input type="number" name="inputIncome" required><br>
 カテゴリ：
 <select name="category">
