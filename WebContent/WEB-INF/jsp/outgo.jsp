@@ -23,7 +23,7 @@
 <body>
 <p><%= loginUser.getUserName() %>さんログイン中</p>
 <h1>支出の入力</h1>
-<form action="/Main" method="post">
+<form action="/familyBudget/Main" method="post">
 金額：￥<input type="number" name="inputOutgo" required><br>
 カテゴリ：
 <select name="category">

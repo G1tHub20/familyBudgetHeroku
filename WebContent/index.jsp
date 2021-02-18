@@ -13,7 +13,7 @@
 <body>
 <h1>家計簿アプリへようこそ</h1>
 </body>
-<form action="/Login" method="post">
+<form action="/familyBudget/Login" method="post">
 <!-- ユーザー名：<input type="text"><br> -->
 ユーザー名：<input type="text" name="userName" required><br>
 パスワード：<input type="password" name="pass" required><br>

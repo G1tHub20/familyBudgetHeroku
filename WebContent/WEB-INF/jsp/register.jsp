@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>アカウント登録</h1>
-<form action="/Register" method="post"> <!-- ★ -->
+<form action="/familyBudget/Register" method="post"> <!-- ★ -->
 ユーザー名：<input type="text" name="userName" required><br>
 パスワード：<input type="password" name="pass" required><br>
 <% if(errorMsg != null) { %>
