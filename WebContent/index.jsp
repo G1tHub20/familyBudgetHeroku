@@ -14,9 +14,8 @@
 <h1>家計簿アプリへようこそ</h1>
 </body>
 <form action="/familyBudget/Login" method="post">
-<!-- ユーザー名：<input type="text"><br> -->
-ユーザー名：<input type="text" name="userName" required><br>
-パスワード：<input type="password" name="pass" required><br>
+ユーザー名：<input type="text" name="userName" value="OKAWA" required><br>
+パスワード：<input type="password" name="pass" value="1234" required><br>
 <button type="submit">ログイン</button>
 </form>
 <a href="/familyBudget/Register">アカウント登録</a>
