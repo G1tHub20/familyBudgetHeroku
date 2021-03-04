@@ -57,7 +57,7 @@ public class UserDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("DB接続しっぱい"); //★
+			System.out.println("DB接続しっぱい");
 			return null;
 		}
 		System.out.println("▲▲----------------------------------------------------------------");
