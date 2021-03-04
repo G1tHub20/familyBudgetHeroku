@@ -15,7 +15,7 @@
 <% if(errorMsg != null) { %>
 <p><%= errorMsg %></p>
 <% } %>
-<a href="/familyBudget">戻る</a>
+<a href="https://familybudget2201.herokuapp.com/">戻る</a>
 <button type="submit">登録</button>
 </form>
 </body>

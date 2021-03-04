@@ -14,7 +14,7 @@
 <% int day = Integer.parseInt(d.format(now)); %>
 <% Calendar c = Calendar.getInstance(); %>
 <% SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd"); %>
-<% String date[] = new String[10]; %>
+<% String date[] = new String[31]; %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -24,7 +24,7 @@
 <p><%= loginUser.getUserName() %>さんログイン中</p>
 <h1>支出の入力</h1>
 <form action="/familyBudget/Main" method="post">
-金額：￥<input type="number" name="inputOutgo" required><br>
+金額：￥<input type="number" min="1" name="inputOutgo" autofocus required><br>
 カテゴリ：
 <select name="category">
 	<option value="食料品">食料品</option>
@@ -34,14 +34,14 @@
 	<option value="日用品">日用品</option>
 </select><br>
 日付：
-<select name="date" >
+<select name="date">
 
 <% c.set(year, month, day); %>
 <% String today = ((c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH))+ "-" + c.get(Calendar.DATE))); %>
 <% System.out.println("today= " + today); %>
 
-<% for(int i = 0; i < 10; i++) { %>
-<%     c.set(year, month, day+i-5); %>
+<% for(int i = 0; i < 31; i++) { %>
+<%     c.set(year, month, day+i-15); %>
 <%     date[i] = (c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH))+ "-" + c.get(Calendar.DATE)); %>
 
 <option

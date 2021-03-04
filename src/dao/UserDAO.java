@@ -9,9 +9,14 @@ import java.sql.SQLException;
 import model.User;
 
 public class UserDAO {
-	private final String JDBC_URL = "jdbc:mysql://localhost:3306/test";
-	private final String DB_USER = "root";
-	private final String DB_PASS = "mysqlpa55";
+//	private final String JDBC_URL = "jdbc:mysql://localhost:3306/test";
+//	private final String DB_USER = "root";
+//	private final String DB_PASS = "mysqlpa55";
+
+	private final String JDBC_URL = "jdbc:mysql://b2ca33687bc184:d7f3a5cc@us-cdbr-east-03.cleardb.com/heroku_4b6dbf4a90deef4?reconnect=true";
+	private final String DB_USER = "b2ca33687bc184";
+	private final String DB_PASS = "d7f3a5cc";
+
 
 	// ◆Userテーブルからレコードを取得するメソッド
 	public User findUser(User inputUser) {
@@ -52,7 +57,7 @@ public class UserDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("DB接続しっぱい"); //★
+			System.out.println("DB接続しっぱい");
 			return null;
 		}
 		System.out.println("▲▲----------------------------------------------------------------");
